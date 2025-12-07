@@ -1,0 +1,333 @@
+/**
+ * Anomaly Effects CSS Module
+ * Glitch, corruption, and horror effects
+ */
+
+/* ==========================================================================
+   Text Glitch Effect
+   ========================================================================== */
+
+.glitchText {
+  position: relative;
+  display: inline-block;
+}
+
+.glitchText::before,
+.glitchText::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.glitchActive::before {
+  animation: glitch1 0.3s infinite;
+  color: #ff0000;
+  opacity: 0.8;
+}
+
+.glitchActive::after {
+  animation: glitch2 0.3s infinite;
+  color: #00ffff;
+  opacity: 0.8;
+}
+
+@keyframes glitch1 {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch2 {
+  0% { transform: translate(0); }
+  20% { transform: translate(2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(-2px, 2px); }
+  100% { transform: translate(0); }
+}
+
+/* ==========================================================================
+   Corruption Effect
+   ========================================================================== */
+
+.corruption {
+  animation: corrupt 0.5s ease-in-out;
+}
+
+@keyframes corrupt {
+  0% { filter: none; }
+  10% { filter: hue-rotate(90deg); }
+  20% { filter: invert(1); }
+  30% { filter: saturate(5); }
+  40% { filter: hue-rotate(180deg); }
+  50% { filter: brightness(0.5); }
+  60% { filter: contrast(2); }
+  70% { filter: hue-rotate(270deg); }
+  80% { filter: grayscale(1); }
+  90% { filter: sepia(1); }
+  100% { filter: none; }
+}
+
+.corruptedText {
+  font-family: monospace;
+  letter-spacing: -1px;
+  color: #990000;
+}
+
+/* ==========================================================================
+   Screen Tear Effect
+   ========================================================================== */
+
+.screenTear {
+  position: relative;
+  overflow: hidden;
+}
+
+.screenTear::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  animation: scanlines 0.1s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* ==========================================================================
+   Flicker Effect
+   ========================================================================== */
+
+.flicker {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.flickerIntense {
+  animation: flickerIntense 0.1s infinite;
+}
+
+@keyframes flickerIntense {
+  0% { opacity: 1; }
+  25% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+  75% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* ==========================================================================
+   Static / Noise Effect
+   ========================================================================== */
+
+.staticOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.staticActive {
+  opacity: 0.15;
+  animation: staticPulse 0.1s steps(10) infinite;
+}
+
+@keyframes staticPulse {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0.1; }
+}
+
+/* ==========================================================================
+   Presence / Shadow Effect
+   ========================================================================== */
+
+.presence {
+  position: fixed;
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 9998;
+}
+
+.presenceActive {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Temporal / Time Distortion
+   ========================================================================== */
+
+.temporal {
+  animation: temporal 2s ease-in-out;
+}
+
+@keyframes temporal {
+  0% { transform: scale(1); filter: blur(0); }
+  25% { transform: scale(1.02); filter: blur(1px); }
+  50% { transform: scale(0.98); filter: blur(2px); }
+  75% { transform: scale(1.01); filter: blur(1px); }
+  100% { transform: scale(1); filter: blur(0); }
+}
+
+/* ==========================================================================
+   Text Scramble
+   ========================================================================== */
+
+.scramble {
+  font-family: monospace;
+}
+
+/* ==========================================================================
+   Deja Vu Effect (duplicate/echo)
+   ========================================================================== */
+
+.dejaVu {
+  position: relative;
+}
+
+.dejaVu::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* ==========================================================================
+   Eyes / Watching Effect
+   ========================================================================== */
+
+.eyes {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.eyes::before,
+.eyes::after {
+  content: '👁';
+  position: absolute;
+  font-size: 16px;
+}
+
+.eyes::before {
+  left: 0;
+}
+
+.eyes::after {
+  left: 25px;
+}
+
+.eyesVisible {
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   Whisper Effect (text appearing)
+   ========================================================================== */
+
+.whisper {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-style: italic;
+  color: var(--color-text-muted);
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  z-index: 9996;
+  pointer-events: none;
+}
+
+.whisperActive {
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   Page Shake
+   ========================================================================== */
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+/* ==========================================================================
+   Cursor Effects
+   ========================================================================== */
+
+.cursorInvert {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M0 0l6 14 2-6 6-2z' fill='%23fff' stroke='%23000'/%3E%3C/svg%3E"), auto;
+}
+
+.cursorHide {
+  cursor: none;
+}
+
+/* ==========================================================================
+   VHS / Old Monitor Effect
+   ========================================================================== */
+
+.vhsEffect {
+  position: relative;
+}
+
+.vhsEffect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+}

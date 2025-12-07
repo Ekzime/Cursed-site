@@ -1,0 +1,191 @@
+/**
+ * Footer Styles - phpBB 2.x SubSilver theme
+ */
+
+.footer {
+  margin-top: var(--space-xl);
+}
+
+/* ==========================================================================
+   Statistics Box
+   ========================================================================== */
+
+.statsBox {
+  margin-bottom: var(--space-md);
+}
+
+.statsTable {
+  width: 100%;
+  border: 1px solid var(--color-border);
+}
+
+.statsHeader {
+  background: var(--gradient-header);
+  color: var(--color-header-text);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+}
+
+.statsRow td {
+  background-color: var(--color-row-1);
+  font-size: var(--font-size-sm);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+}
+
+.memberLink {
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Who's Online Box
+   ========================================================================== */
+
+.onlineBox {
+  margin-bottom: var(--space-md);
+}
+
+.onlineTable {
+  width: 100%;
+  border: 1px solid var(--color-border);
+}
+
+.onlineHeader {
+  background: var(--gradient-header);
+  color: var(--color-header-text);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.onlineContent {
+  background-color: var(--color-row-1);
+  font-size: var(--font-size-sm);
+  padding: var(--space-md);
+  line-height: 1.6;
+}
+
+.onlineIcon {
+  margin-right: var(--space-sm);
+}
+
+.onlineSmall {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.onlineLegend {
+  background-color: var(--color-row-2);
+  font-size: var(--font-size-xs);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+}
+
+.legendItem {
+  margin: 0 var(--space-lg);
+  white-space: nowrap;
+}
+
+.legendIcon {
+  margin-right: var(--space-xs);
+}
+
+/* ==========================================================================
+   Bottom Bar (Timezone / Jump)
+   ========================================================================== */
+
+.bottomBar {
+  margin-bottom: var(--space-md);
+}
+
+.bottomTable {
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.bottomTable td {
+  background: transparent;
+  border: none;
+  padding: var(--space-sm) 0;
+  font-size: var(--font-size-xs);
+}
+
+.timezoneCell {
+  color: var(--color-text-muted);
+}
+
+.jumpCell {
+  text-align: right;
+}
+
+.jumpSelect {
+  font-size: var(--font-size-xs);
+  padding: var(--space-xs);
+  margin-right: var(--space-xs);
+}
+
+.jumpButton {
+  font-size: var(--font-size-xs);
+  padding: var(--space-xs) var(--space-sm);
+}
+
+/* ==========================================================================
+   Copyright
+   ========================================================================== */
+
+.copyright {
+  text-align: center;
+  padding: var(--space-lg) 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.copyright p {
+  margin-bottom: var(--space-sm);
+}
+
+.poweredLink {
+  color: var(--color-text-muted);
+}
+
+.poweredLink:hover {
+  color: var(--color-link-hover);
+}
+
+.disclaimer {
+  font-size: 9px;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.lastUpdate {
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .statsRow td {
+    display: block;
+    text-align: left;
+  }
+
+  .onlineLegend {
+    text-align: left;
+  }
+
+  .legendItem {
+    display: block;
+    margin: var(--space-xs) 0;
+  }
+
+  .jumpCell {
+    display: none;
+  }
+}

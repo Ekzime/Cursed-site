@@ -1,0 +1,189 @@
+/**
+ * Header Styles - phpBB 2.x SubSilver theme
+ */
+
+.header {
+  margin-bottom: var(--space-lg);
+}
+
+/* ==========================================================================
+   Top Bar (Welcome/Login)
+   ========================================================================== */
+
+.topBar {
+  background-color: var(--color-row-1);
+  border: 1px solid var(--color-border);
+  border-bottom: none;
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-xs);
+}
+
+.topTable {
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.topTable td {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.welcomeCell {
+  text-align: left;
+}
+
+.welcomeCell a {
+  font-size: var(--font-size-xs);
+}
+
+.dateCell {
+  text-align: right;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Main Header (Logo)
+   ========================================================================== */
+
+.mainHeader {
+  background: var(--gradient-header);
+  border: 1px solid var(--color-border);
+  border-bottom: none;
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.logoTable {
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.logoTable td {
+  background: transparent;
+  border: none;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.logoCell {
+  width: 70%;
+}
+
+.logoLink {
+  text-decoration: none;
+  display: block;
+}
+
+.logoLink:hover {
+  text-decoration: none;
+}
+
+.forumTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-header-text);
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.forumSubtitle {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  margin-top: var(--space-xs);
+}
+
+.searchCell {
+  width: 30%;
+  text-align: right;
+}
+
+.searchForm {
+  display: inline-flex;
+  gap: var(--space-xs);
+}
+
+.searchInput {
+  width: 150px;
+  font-size: var(--font-size-sm);
+  padding: var(--space-xs) var(--space-sm);
+}
+
+.searchButton {
+  font-size: var(--font-size-sm);
+  padding: var(--space-xs) var(--space-md);
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+
+.navBar {
+  background: var(--gradient-row-header);
+  border: 1px solid var(--color-border);
+  padding: var(--space-xs) var(--space-md);
+}
+
+.navTable {
+  width: auto;
+  background: transparent;
+  border: none;
+}
+
+.navTable td {
+  background: transparent;
+  border: none;
+  padding: var(--space-xs) var(--space-lg);
+  white-space: nowrap;
+}
+
+.navLink {
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.navLink:visited {
+  color: var(--color-text);
+}
+
+.navLink:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.navIcon {
+  font-size: var(--font-size-base);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .mainHeader {
+    padding: var(--space-md);
+  }
+
+  .forumTitle {
+    font-size: 18px;
+  }
+
+  .searchCell {
+    display: none;
+  }
+
+  .navTable td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .navIcon {
+    display: none;
+  }
+}

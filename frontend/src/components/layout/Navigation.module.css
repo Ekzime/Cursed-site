@@ -1,0 +1,33 @@
+/**
+ * Navigation/Breadcrumbs Styles - phpBB 2.x style
+ */
+
+.navigation {
+  padding: var(--space-sm) 0;
+  margin-bottom: var(--space-md);
+}
+
+.breadcrumbs {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.separator {
+  margin: 0 var(--space-sm);
+  color: var(--color-text-muted);
+}
+
+.link {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.current {
+  color: var(--color-text);
+  font-weight: bold;
+}
