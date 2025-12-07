@@ -1,0 +1,225 @@
+/**
+ * Board Page Styles - Thread list (phpBB style)
+ */
+
+.container {
+  /* Main container */
+}
+
+/* ==========================================================================
+   Board Header
+   ========================================================================== */
+
+.boardHeader {
+  background: var(--gradient-header);
+  color: var(--color-header-text);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--color-border);
+}
+
+.boardTitle {
+  font-size: var(--font-size-lg);
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.boardDesc {
+  font-size: var(--font-size-sm);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   Actions
+   ========================================================================== */
+
+.actions {
+  margin: var(--space-md) 0;
+}
+
+.newTopicBtn {
+  display: inline-block;
+  background: var(--gradient-button);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.newTopicBtn:hover {
+  background: var(--color-row-2);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Thread Table
+   ========================================================================== */
+
+.threadTable {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-md);
+}
+
+.columnHeaders {
+  background: var(--gradient-row-header);
+}
+
+.columnHeaders th {
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.colIcon {
+  width: 30px;
+}
+
+.colTopic {
+  text-align: left !important;
+}
+
+.colAuthor {
+  width: 100px;
+}
+
+.colReplies,
+.colViews {
+  width: 60px;
+}
+
+.colLastPost {
+  width: 150px;
+}
+
+/* ==========================================================================
+   Thread Rows
+   ========================================================================== */
+
+.row1 td {
+  background-color: var(--color-row-1);
+}
+
+.row2 td {
+  background-color: var(--color-row-2);
+}
+
+.pinned td {
+  background-color: #ffffcc !important;
+}
+
+.iconCell {
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+.threadIcon {
+  font-size: 16px;
+}
+
+.topicCell {
+  padding: var(--space-sm) var(--space-md) !important;
+}
+
+.topicLink {
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  color: var(--color-link);
+}
+
+.topicLink:hover {
+  color: var(--color-link-hover);
+}
+
+.badge {
+  color: var(--color-hot);
+  font-size: var(--font-size-xs);
+  margin-right: var(--space-xs);
+}
+
+.badgeLocked {
+  color: var(--color-locked);
+  font-size: var(--font-size-xs);
+  margin-right: var(--space-xs);
+}
+
+.pageLinks {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-left: var(--space-sm);
+}
+
+.pageLinks a {
+  font-size: var(--font-size-xs);
+}
+
+.authorCell {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  vertical-align: middle !important;
+}
+
+.countCell {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  vertical-align: middle !important;
+}
+
+.lastPostCell {
+  font-size: var(--font-size-xs);
+  padding: var(--space-sm) var(--space-md) !important;
+  vertical-align: middle !important;
+}
+
+.lastPostDate {
+  color: var(--color-text-muted);
+}
+
+.gotoLink {
+  font-size: var(--font-size-xs);
+  color: var(--color-link);
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+  text-align: center;
+  padding: var(--space-sm) 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.pageInfo {
+  margin: 0 var(--space-md);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .colAuthor,
+  .colReplies,
+  .colViews {
+    display: none;
+  }
+
+  .authorCell,
+  .countCell {
+    display: none;
+  }
+
+  .lastPostCell {
+    font-size: 10px;
+  }
+
+  .colLastPost {
+    width: 100px;
+  }
+}

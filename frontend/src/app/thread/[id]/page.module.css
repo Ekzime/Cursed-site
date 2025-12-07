@@ -1,0 +1,300 @@
+/**
+ * Thread Page Styles - Post list (phpBB style)
+ */
+
+.container {
+  /* Main container */
+}
+
+/* ==========================================================================
+   Thread Header
+   ========================================================================== */
+
+.threadHeader {
+  background: var(--gradient-header);
+  color: var(--color-header-text);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--color-border);
+}
+
+.threadTitle {
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Actions
+   ========================================================================== */
+
+.actions {
+  margin: var(--space-md) 0;
+}
+
+.replyBtn {
+  display: inline-block;
+  background: var(--gradient-button);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.replyBtn:hover {
+  background: var(--color-row-2);
+  text-decoration: none;
+}
+
+.lockedNotice {
+  color: var(--color-locked);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+
+.posts {
+  margin-bottom: var(--space-lg);
+}
+
+.post {
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--color-border);
+}
+
+.post.deleted {
+  opacity: 0.6;
+}
+
+.postTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.postTable td {
+  border: none;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Author Column
+   ========================================================================== */
+
+.authorColumn {
+  width: 150px;
+  background: var(--color-row-1);
+  vertical-align: top;
+  padding: var(--space-md) !important;
+  border-right: 1px solid var(--color-border-light);
+}
+
+.authorInfo {
+  text-align: center;
+}
+
+.authorName {
+  font-weight: bold;
+  font-size: var(--font-size-base);
+  color: var(--color-link);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.authorRole {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.authorAvatar {
+  margin-bottom: var(--space-md);
+}
+
+.authorAvatar img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--color-border-light);
+}
+
+.defaultAvatar {
+  width: 80px;
+  height: 80px;
+  background: var(--color-row-2);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto;
+}
+
+.authorStats {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Content Column
+   ========================================================================== */
+
+.contentColumn {
+  background: var(--color-content-bg);
+  vertical-align: top;
+}
+
+.postHeader {
+  background: var(--gradient-row-header);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-xs);
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  justify-content: space-between;
+}
+
+.postNumber {
+  font-weight: bold;
+  color: var(--color-text-muted);
+}
+
+.postDate {
+  color: var(--color-text-muted);
+}
+
+.postContent {
+  padding: var(--space-lg);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  min-height: 100px;
+}
+
+.postContent p {
+  margin-bottom: var(--space-md);
+}
+
+.postContent p:last-child {
+  margin-bottom: 0;
+}
+
+.editNotice {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-xs);
+  font-style: italic;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.postActions {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-xs);
+  text-align: right;
+  background: var(--color-row-1);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.postActions a {
+  color: var(--color-link);
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+  text-align: center;
+  padding: var(--space-sm) 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.pageInfo {
+  margin: 0 var(--space-md);
+}
+
+/* ==========================================================================
+   Reply Form
+   ========================================================================== */
+
+.replyForm {
+  margin-top: var(--space-xl);
+}
+
+.replyTable {
+  width: 100%;
+  border: 1px solid var(--color-border);
+}
+
+.replyHeader {
+  background: var(--gradient-header);
+  color: var(--color-header-text);
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.replyLabel {
+  background: var(--color-row-1);
+  width: 100px;
+  padding: var(--space-md) !important;
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.replyInput {
+  background: var(--color-row-2);
+  padding: var(--space-md) !important;
+}
+
+.replyTextarea {
+  width: 100%;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  padding: var(--space-sm);
+  border: 1px solid var(--color-input-border);
+  resize: vertical;
+}
+
+.replySubmit {
+  background: var(--color-row-1);
+  padding: var(--space-md) !important;
+}
+
+.submitBtn,
+.previewBtn {
+  margin-right: var(--space-sm);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .authorColumn {
+    width: 100px;
+    padding: var(--space-sm) !important;
+  }
+
+  .defaultAvatar {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .authorStats {
+    display: none;
+  }
+
+  .postContent {
+    padding: var(--space-md);
+  }
+
+  .replyLabel {
+    display: none;
+  }
+}
