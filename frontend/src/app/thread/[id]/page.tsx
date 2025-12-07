@@ -193,7 +193,7 @@ export default async function ThreadPage({ params }: PageProps) {
                   {/* Author info */}
                   <td className={styles.authorColumn}>
                     <div className={styles.authorInfo}>
-                      <Link href={`/user/${post.author.username}`} className={styles.authorName}>
+                      <Link href={`/user/${encodeURIComponent(post.author.username)}`} className={styles.authorName}>
                         {post.author.username}
                       </Link>
                       <div className={styles.authorRole}>{post.author.role}</div>

@@ -188,7 +188,7 @@ export default function HomePage() {
                         <br />
                         <span className={styles.lastPostMeta}>
                           by{' '}
-                          <Link href={`/user/${board.lastPost.author}`}>
+                          <Link href={`/user/${encodeURIComponent(board.lastPost.author)}`}>
                             {board.lastPost.author}
                           </Link>
                           <br />

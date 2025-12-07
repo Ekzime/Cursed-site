@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 
@@ -18,13 +19,17 @@ export default function Header({
   isLoggedIn = false,
   username = 'Guest',
 }: HeaderProps) {
-  // Current date formatted like phpBB did it
-  const currentDate = new Date().toLocaleDateString('en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
+  // Use static date to avoid hydration mismatch, update on client
+  const [currentDate, setCurrentDate] = useState('Sun Dec 03, 2006');
+
+  useEffect(() => {
+    setCurrentDate(new Date().toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    }));
+  }, []);
 
   return (
     <header className={styles.header}>

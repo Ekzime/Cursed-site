@@ -195,14 +195,14 @@ export default async function BoardPage({ params }: PageProps) {
                 )}
               </td>
               <td className={styles.authorCell}>
-                <Link href={`/user/${thread.author.username}`}>
+                <Link href={`/user/${encodeURIComponent(thread.author.username)}`}>
                   {thread.author.username}
                 </Link>
               </td>
               <td className={styles.countCell}>{thread.replyCount}</td>
               <td className={styles.countCell}>{thread.viewCount}</td>
               <td className={styles.lastPostCell}>
-                <Link href={`/user/${thread.lastPost.author}`}>
+                <Link href={`/user/${encodeURIComponent(thread.lastPost.author)}`}>
                   {thread.lastPost.author}
                 </Link>
                 <br />
