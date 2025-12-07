@@ -1,0 +1,322 @@
+/**
+ * Anomaly Visual Effects
+ * Horror effects for Cursed Board
+ */
+
+/* ==========================================================================
+   Glitch Effect
+   ========================================================================== */
+
+.glitchOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.glitchLine1,
+.glitchLine2,
+.glitchLine3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 0, 0, 0.8);
+  animation: glitchScan 0.1s infinite;
+}
+
+.glitchLine1 {
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.glitchLine2 {
+  top: 50%;
+  animation-delay: 0.05s;
+  background: rgba(0, 255, 255, 0.8);
+}
+
+.glitchLine3 {
+  top: 80%;
+  animation-delay: 0.1s;
+  background: rgba(0, 255, 0, 0.8);
+}
+
+@keyframes glitchScan {
+  0%, 100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   Static Noise
+   ========================================================================== */
+
+.staticOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  animation: staticFlicker 0.05s infinite;
+}
+
+@keyframes staticFlicker {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+/* ==========================================================================
+   Presence / Shadow
+   ========================================================================== */
+
+.presenceOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9997;
+  background: radial-gradient(
+    ellipse at var(--presence-x, 80%) var(--presence-y, 50%),
+    rgba(0, 0, 0, 0.8) 0%,
+    transparent 50%
+  );
+  animation: presenceFade 2s ease-in-out;
+}
+
+.shadowFigure {
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  width: 100px;
+  height: 300px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.9) 20%,
+    rgba(0, 0, 0, 0.9) 80%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 0 0;
+  filter: blur(10px);
+  animation: shadowAppear 2s ease-out;
+}
+
+@keyframes presenceFade {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes shadowAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  30% {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+/* ==========================================================================
+   Whisper Text
+   ========================================================================== */
+
+.whisperOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9996;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whisperText {
+  font-family: 'Times New Roman', serif;
+  font-size: 48px;
+  color: rgba(139, 0, 0, 0.6);
+  text-shadow:
+    0 0 10px rgba(139, 0, 0, 0.8),
+    0 0 20px rgba(139, 0, 0, 0.6),
+    0 0 30px rgba(139, 0, 0, 0.4);
+  animation: whisperAppear 2s ease-in-out;
+  letter-spacing: 8px;
+  text-transform: lowercase;
+}
+
+@keyframes whisperAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(10px);
+  }
+  20% {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    filter: blur(5px);
+  }
+}
+
+/* ==========================================================================
+   Eyes Watching
+   ========================================================================== */
+
+.eyesOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9995;
+}
+
+.eye {
+  position: absolute;
+  font-size: 64px;
+  opacity: 0;
+  animation: eyeAppear 3s ease-in-out;
+  filter:
+    drop-shadow(0 0 10px rgba(255, 0, 0, 0.5))
+    drop-shadow(0 0 20px rgba(255, 0, 0, 0.3));
+}
+
+@keyframes eyeAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  10% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+/* ==========================================================================
+   Flicker Effect
+   ========================================================================== */
+
+.flickerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9994;
+  background: white;
+  animation: flicker 0.5s steps(2) infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.8; }
+  20% { opacity: 0; }
+  30% { opacity: 0.6; }
+  40% { opacity: 0; }
+  50% { opacity: 0.9; }
+  60% { opacity: 0; }
+}
+
+/* ==========================================================================
+   Corruption Vignette
+   ========================================================================== */
+
+.corruptionOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9993;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(139, 0, 0, 0.3) 70%,
+    rgba(50, 0, 0, 0.8) 100%
+  );
+  transition: opacity 1s ease;
+}
+
+/* ==========================================================================
+   Global Body Effects (applied via JS)
+   ========================================================================== */
+
+:global(body.anomaly-shake) {
+  animation: bodyShake 0.5s ease-in-out;
+}
+
+@keyframes bodyShake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-5px); }
+  20% { transform: translateX(5px); }
+  30% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  50% { transform: translateX(-3px); }
+  60% { transform: translateX(3px); }
+  70% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  90% { transform: translateX(-1px); }
+}
+
+:global(body.anomaly-invert) {
+  filter: invert(1);
+  transition: filter 0.3s ease;
+}
+
+:global(body.anomaly-blur) {
+  filter: blur(2px);
+  transition: filter 0.5s ease;
+}

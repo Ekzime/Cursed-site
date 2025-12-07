@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { Header, Footer } from '@/components/layout';
+import { AnomalyProvider, AnomalyTestPanel } from '@/components/anomaly';
 
 export const metadata: Metadata = {
   title: 'Cursed Board - Community Forum',
@@ -24,13 +25,16 @@ export default function RootLayout({
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
       <body>
-        <div className="page-wrapper">
-          <Header forumName="Cursed Board" />
-          <main>
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <AnomalyProvider>
+          <div className="page-wrapper">
+            <Header forumName="Cursed Board" />
+            <main>
+              {children}
+            </main>
+            <Footer />
+          </div>
+          <AnomalyTestPanel />
+        </AnomalyProvider>
       </body>
     </html>
   );
